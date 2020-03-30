@@ -61,7 +61,7 @@ def discover_peers(service_record):
 def connect_the_dots(names):
     creds = (os.getenv("COUCHDB_USER"), os.getenv("COUCHDB_PASSWORD"))
     for name in names:
-        uri = "http://127.0.0.1:5986/_nodes/couchdb@{0}".format(name)
+        uri = "http://127.0.0.1:5984/_nodes/couchdb@{0}".format(name)
         doc = {}
         if creds[0] and creds[1]:
             resp = requests.put(uri, data=json.dumps(doc), auth=creds)
